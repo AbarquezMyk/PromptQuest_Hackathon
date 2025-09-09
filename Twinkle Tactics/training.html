@@ -1,1 +1,63 @@
-<!-- training -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Twinkle Tactics - Training</title>
+  <link rel="stylesheet" href="CSS/training.css"/>
+</head>
+<body>
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="CSS/videos/galaxy.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="training-container">
+    <!-- Coins Row -->
+    <div class="coins-row">
+      <div class="coin-display">
+        <img src="CSS/Images/Diamond Coin.png" alt="Diamond Coin" class="coin-img">
+        <span id="gold-amount">500</span>
+      </div>
+      <div class="coin-display">
+        <img src="CSS/Images/Fairy Coin.png" alt="Fairy Coin" class="coin-img">
+        <span id="fairy-amount">0</span>
+      </div>
+    </div>
+
+    <h1>⚔️ Twinkle Tactics - Training Grounds ⚔️</h1>
+
+    <div class="stats-grid">
+      <!-- Health -->
+      <div class="stat-card">
+        <h2>❤️ Health</h2>
+        <p class="stat-value" id="health-value">100</p>
+        <button class="train-btn" id="health-btn">
+          Train (+10) <span class="cost" id="health-cost">Cost: 50 <img src="CSS/Images/Diamond Coin.png" alt="Gold" class="inline-coin"></span>
+        </button>
+      </div>
+
+      <!-- Critical Hit Chance -->
+      <div class="stat-card">
+        <h2>🎯 Crit Chance</h2>
+        <p class="stat-value" id="crit-value">5%</p>
+        <button class="train-btn" id="crit-btn">
+          Train (+1%) <span class="cost" id="crit-cost">Cost: 75 <img src="CSS/Images/Diamond Coin.png" alt="Gold" class="inline-coin"></span>
+        </button>
+      </div>
+
+      <!-- Strength -->
+      <div class="stat-card">
+        <h2>💪 Strength</h2>
+        <p class="stat-value" id="strength-value">20</p>
+        <button class="train-btn" id="strength-btn">
+          Train (+5) <span class="cost" id="strength-cost">Cost: 100 <img src="CSS/Images/Diamond Coin.png" alt="Gold" class="inline-coin"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="JavaScript/training.js"></script>
+</body>
+</html>
