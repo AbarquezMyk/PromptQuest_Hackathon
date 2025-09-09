@@ -1,4 +1,5 @@
 let gold = 500;
+let fairy = 0; // If you want to track Fairy Coins separately
 
 let stats = {
   health: { value: 100, cost: 50, increment: 10, costMultiplier: 1.2 },
@@ -7,8 +8,9 @@ let stats = {
 };
 
 function updateUI() {
-  // Update gold in top-left
-  document.getElementById("gold-amount-top").textContent = gold;
+  // Update coin amounts
+  document.getElementById("gold-amount").textContent = gold;
+  document.getElementById("fairy-amount").textContent = fairy;
 
   // Update stats
   document.getElementById("health-value").textContent = stats.health.value;
