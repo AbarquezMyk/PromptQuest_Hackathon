@@ -1,1 +1,138 @@
-/* play css */
+/* Galaxy video background */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Body layout */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Main UI panel */
+.ui-panel {
+  background: rgba(0, 0, 0, 0.65);
+  border: 3px solid #B04CE5;
+  border-radius: 30px;
+  padding: 3rem;
+  box-shadow: 0 0 40px #B04CE5, inset 0 0 20px #FFDF00;
+  text-align: center;
+  max-width: 700px;
+  width: 90%;
+  z-index: 1;
+  backdrop-filter: blur(8px);
+}
+
+/* Title box */
+.title-box h1 {
+  font-size: 3.5rem;
+  color: #FFDF00;
+  text-shadow: 0 0 20px #FFDF00;
+  margin-bottom: 2rem;
+  animation: floaty 3s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Button stack */
+.button-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.button-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 4px #B04CE5);
+}
+
+.sub-button {
+  background-color: #FADFC7;
+  color: #B04CE5;
+  font-size: 1.1rem;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 15px #B04CE5;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sub-button:hover {
+  background-color: #FFDF00;
+  color: white;
+  box-shadow: 0 0 25px #FFDF00;
+}
+
+
+/* Main Play button */
+.main-button {
+  background: linear-gradient(to right, #B04CE5, #FFDF00);
+  color: white;
+  font-size: 1.4rem;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 25px #FFDF00;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px #FFDF00, 0 0 60px #B04CE5;
+}
+
+/* Sub buttons */
+.sub-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.sub-button {
+  background-color: #FADFC7;
+  color: #B04CE5;
+  font-size: 1.1rem;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 15px #B04CE5;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sub-button:hover {
+  background-color: #FFDF00;
+  color: white;
+  box-shadow: 0 0 25px #FFDF00;
+}
+
+/* Footer */
+.footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #FADFC7;
+}
