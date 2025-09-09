@@ -14,6 +14,18 @@
     Your browser does not support the video tag.
   </video>
 
+  <!-- Coin HUD -->
+  <div class="coins-row">
+    <div class="coin-display">
+      <img src="CSS/Images/Diamond Coin.png" alt="Diamond Coin" class="coin-img">
+      <span id="gold-amount">500</span>
+    </div>
+    <div class="coin-display">
+      <img src="CSS/Images/Fairy Coin.png" alt="Fairy Coin" class="coin-img">
+      <span id="fairy-amount">0</span>
+    </div>
+  </div>
+
   <!-- Main UI Panel -->
   <div class="ui-panel">
     <div class="title-box">
@@ -21,19 +33,23 @@
     </div>
 
     <div class="button-stack">
-      <button class="main-button">Play Game ✨</button>
+      <a href="levels/level 1/level1.html">
+        <button class="main-button">Play Game</button>
+      </a>
 
       <div class="sub-buttons">
-  <button class="sub-button">
-    <img src="CSS/images/fairyshop.png" alt="Fairy Shop" class="button-icon" />
-    Fairy Shop
-  </button>
-  <button class="sub-button">
-    <img src="CSS/images/train.png" alt="Train" class="button-icon" />
-    Train
-  </button>
-</div>
-
+        <button class="sub-button">
+          <span class="emoji">🧚</span>
+          <span class="button-text">Fairy Shop</span>
+        </button>
+        <a href="training.html">
+          <button class="sub-button">
+            <span class="emoji">🛠️</span>
+            <span class="button-text">Train</span>
+          </button>
+        </a>
+      </div>
+    </div>
 
     <footer class="footer">
       © 2025 Twinkle Tactics. Made with sparkle by Angry PPG.

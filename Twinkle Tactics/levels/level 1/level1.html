@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Twinkle Tactics - Level 1</title>
+  <link rel="stylesheet" href="level1.css" />
+</head>
+<body>
+
+  <!-- Galaxy Background -->
+  <video autoplay muted loop id="bg-video">
+    <source src="../../CSS/videos/galaxylvl1.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Coin HUD -->
+  <div class="coins-row">
+    <div class="coin-display">
+      <img src="../../CSS/Images/Diamond Coin.png" alt="Diamond Coin" class="coin-img" />
+      <span id="gold-amount">500</span>
+    </div>
+    <div class="coin-display">
+      <img src="../../CSS/Images/Fairy Coin.png" alt="Fairy Coin" class="coin-img" />
+      <span id="fairy-amount">0</span>
+    </div>
+  </div>
+
+  <!-- Weapon panel (top-right) -->
+  <div id="weapon-panel">
+    <div class="weapon-header">
+      <div class="weapon-name">Starburst Wand</div>
+      <div class="weapon-stars">★★★★★</div>
+    </div>
+    <div class="weapon-stats">
+      <div><span class="stat-label">LV.</span> <span id="wpn-level">1</span></div>
+      <div><span class="stat-label">ATK</span> <span id="wpn-atk">120</span> <span class="bonus">+30</span></div>
+      <div><span class="stat-label">ATK SPD</span> <span id="wpn-spd">0.60s</span></div>
+      <div><span class="stat-label">Bolts</span> <span id="wpn-bolts">1</span></div>
+      <div><span class="stat-label">LEVEL</span> <span id="game-level">1 / 5</span></div>
+    </div>
+    <button id="enhance-btn" type="button">Enhance (15💎)</button>
+    <div id="enhance-msg"></div>
+  </div>
+
+  <!-- Game canvas -->
+  <div id="game-container">
+    <canvas id="game-canvas" width="960" height="540"></canvas>
+  </div>
+
+  <!-- Bottom progress panel -->
+  <div id="progress-panel">
+    <div class="progress-labels">
+      <span class="label">Reward Progress</span>
+      <span id="upgrade-points" class="points">Points: 0</span>
+    </div>
+    <div class="progress-bar">
+      <div id="progress-fill"></div>
+    </div>
+    <div id="wave-msg" class="wave"></div>
+  </div>
+
+  <!-- Modals -->
+  <div id="overlay" class="overlay hidden"></div>
+
+  <div id="modal-level-complete" class="modal hidden">
+    <div class="modal-title">Level Complete!</div>
+    <div class="modal-body">Get ready for the next challenge.</div>
+    <button id="next-level-btn" class="modal-btn">Proceed</button>
+  </div>
+
+  <div id="modal-game-over" class="modal hidden">
+    <div class="modal-title">You Lose. Bohoooooo 👻</div>
+    <div class="modal-body">Try again? You’ve got this.</div>
+    <div class="modal-actions">
+      <button id="retry-btn" class="modal-btn">Try Again</button>
+      <button id="quit-btn" class="modal-btn alt">Quit</button>
+    </div>
+  </div>
+
+  <script src="level1.js"></script>
+</body>
+</html>
