@@ -1,1 +1,106 @@
-<!-- fairy selection -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fairy Selection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      color: #fff;
+      background: radial-gradient(circle at top left, #2e004f, #6a0dad, #120029);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+      opacity: 0.6;
+      z-index: 0;
+    }
+
+    h1 {
+      color: #ffccff;
+      text-shadow: 0 0 10px #ff99ff, 0 0 20px #a64dff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fairy-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fairy {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #fff;
+      border-radius: 12px;
+      width: 180px;
+      padding: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+    }
+
+    .fairy img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .fairy:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #ffccff;
+      border-color: #ffccff;
+    }
+
+    .fairy p {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #ffe6ff;
+      text-shadow: 0 0 5px #ff99ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Choose Your Fairy </h1>
+  <div class="fairy-container">
+    <div class="fairy">
+      <img src="images/lunara.png" alt="Lunara Fairy">
+      <p>Lunara</p>
+    </div>
+    <div class="fairy">
+      <img src="images/sylphina.png" alt="Sylphina Fairy">
+      <p>Sylphina</p>
+    </div>
+    <div class="fairy">
+      <img src="images/aurelia.png" alt="Aurelia Fairy">
+      <p>Aurelia</p>
+    </div>
+  </div>
+  
+
+  <script>
+    const fairies = document.querySelectorAll(".fairy");
+    fairies.forEach(fairy => {
+      fairy.addEventListener("click", () => {
+        const name = fairy.querySelector("p").textContent;
+        alert("You selected " + name + "!");
+      });
+    });
+  </script>
+</body>
+</html>
