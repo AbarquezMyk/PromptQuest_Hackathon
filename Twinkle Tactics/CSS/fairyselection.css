@@ -1,87 +1,217 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-    color: #fff;
-    min-height: 100vh;
-    overflow-x: hidden;
-    position: relative;
-  }
-  
-  /* Video background */
-  #bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2; /* behind everything */
-  }
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  color: #fff;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-  
-  h1 {
-    color: #ffccff;
-    text-shadow: 0 0 10px #ff99ff, 0 0 20px #a64dff;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 2rem;
-  }
-  
-  .fairy-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .fairy {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid #fff;
-    border-radius: 12px;
-    width: 180px;
-    padding: 15px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  
-  .fairy img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    display: block;
-  }
-  
-  .fairy:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #ffccff;
-    border-color: #ffccff;
-  }
-  
-  .fairy p {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #ffe6ff;
-    text-shadow: 0 0 5px #ff99ff;
-  }
-  
-  /* Main UI panel */
-  .ui-panel {
-    background: rgba(0, 0, 0, 0.65);
-    border: 3px solid #B04CE5;
-    border-radius: 30px;
-    padding: 3rem;
-    box-shadow: 0 0 40px #B04CE5, inset 0 0 20px #FFDF00;
-    text-align: center;
-    max-width: 700px;
-    width: 90%;
-    z-index: 1;
-    backdrop-filter: blur(8px);
-    margin: 0 auto;
-    position: relative;
-  }
-  
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Magical overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.05), transparent);
+  z-index: -1;
+  animation: twinkle 8s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+}
+
+/* Panel */
+.ui-panel {
+  background: rgba(0, 0, 0, 0.65);
+  border: 3px solid #B04CE5;
+  border-radius: 30px;
+  padding: 2rem;
+  box-shadow: 0 0 40px #B04CE5, inset 0 0 20px #FFDF00;
+  text-align: center;
+  max-width: 800px;
+  width: 90%;
+  backdrop-filter: blur(8px);
+}
+
+/* Coin Row */
+.coins-row {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.coin-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.coin-img {
+  width: 32px;
+  height: auto;
+  filter: drop-shadow(0 0 6px gold);
+}
+
+.inline-coin {
+  width: 8px;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 2px;
+  position: relative;
+  top: -1px;
+}
+
+/* Title */
+h1 {
+  color: #ffccff;
+  text-shadow: 0 0 10px #ff99ff, 0 0 20px #a64dff;
+  margin-bottom: 2rem;
+}
+
+/* Fairy Cards */
+.fairy-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.fairy {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
+  border-radius: 12px;
+  width: 180px;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  animation: float 4s ease-in-out infinite;
+}
+
+.fairy img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.fairy:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ffccff, 0 0 40px #fff;
+  border-color: #ffccff;
+}
+
+.fairy p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffe6ff;
+  text-shadow: 0 0 5px #ff99ff;
+}
+
+.cost {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #ffdfff;
+}
+
+.cost .inline-coin {
+  width: 20px !important;
+  height: 20px !important;
+  vertical-align: middle;
+  margin-left: 2px;
+  object-fit: contain;
+}
+
+/* Owned Fairy */
+.fairy.owned {
+  border-color: grey;
+  box-shadow: 0 0 15px grey;
+  cursor: default;
+  animation: none;
+}
+
+.owned-label {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 3px 8px;
+  background: white;
+  border: 1px solid grey;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: black;
+  text-shadow: 0 0 5px grey;
+}
+
+/* Toast Notification */
+#toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px 20px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 5px #fff;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+#toast.show {
+  opacity: 1;
+}
+
+/* Fairy Stats */
+.stats {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.85rem;
+  color: #fff0ff;
+  text-shadow: 0 0 4px #ff99ff;
+}
+
+.stats span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.active-fairy {
+  border-color: #FFD700 !important;
+  box-shadow: 0 0 25px #FFD700, 0 0 50px #ffcc00;
+  animation: pulseGlow 1.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 25px #FFD700, 0 0 50px #ffcc00; }
+  50% { box-shadow: 0 0 35px #fff6a3, 0 0 60px #ffe066; }
+}
